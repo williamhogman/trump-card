@@ -4,7 +4,7 @@
 (defn- set-init! [fn]
   (reloaded.repl/set-init! fn))
 
-(defmacro setup! [system-ctor]
+(defmacro setup-user! [system-ctor]
   `(do
      (set-init! ~system-ctor)
      (def ~'system system)

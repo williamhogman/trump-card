@@ -1,6 +1,10 @@
-(ns trump-card.core)
+(ns trump-card.core
+  (:require
+   [potemkin :refer [import-vars]]
+   [trump-card.timbre-setup]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(import-vars
+ [trump-card.config
+  config]
+ [trump-card.quick-user
+  setup-user!])
