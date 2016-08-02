@@ -1,15 +1,8 @@
 (ns trump-card.quick-user
-  (:require [reloaded.repl :refer [system init start stop go reset reset-all]]))
-
-(defn- set-init! [fn]
-  (reloaded.repl/set-init! fn))
+  (:require [reloaded.repl :refer [set-init!]]
+            [potemkin :refer [import-vars]]))
 
 (defmacro setup-user! [system-ctor]
   `(do
-     (set-init! ~system-ctor)
-     (def ~'system system)
-     (def ~'init init)
-     (def ~'start start)
-     (def ~'go go)
-     (def ~'reset reset)
-     (def ~'reset-all reset-all)))
+     (set-init! fn)
+     (import-vars [reloaded.repl system init start stop go reset reset-all])))
