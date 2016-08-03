@@ -4,5 +4,5 @@
 
 (defmacro setup-user! [system-ctor]
   `(do
-     (set-init! fn)
+     (set-init! ~system-ctor)
      (import-vars [reloaded.repl system init start stop go reset reset-all])))
