@@ -6,7 +6,8 @@
 
 (defn- tufte->riemann
   "Coverts a tufte measurement to a riemann measurement"
-  [x] x)
+  [x]
+  x)
 
 (defn- tufte-handler
   "Handles incoming tufte measurements pushing them to riemann"
